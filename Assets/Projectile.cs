@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     public Vector3 movedirection;
     public float speed;
     public int HitDamage;
+    public Portal latestportal;
+    public GameObject dontkill;
     // Start is called before the first frame update
     void Start()
     {

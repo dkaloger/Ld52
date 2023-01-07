@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileEmiter : MonoBehaviour
 {
    public GameObject ProjectilePrefab;
-        
+    public GameObject latest;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +17,7 @@ public class ProjectileEmiter : MonoBehaviour
     {
        // print("turn change received");
         // might change emision location
-        Instantiate(ProjectilePrefab,transform.position, Quaternion.Euler( Vector3.zero));
+       latest= Instantiate(ProjectilePrefab,transform.position, Quaternion.Euler( Vector3.zero));
+        latest.GetComponent<Projectile>().dontkill = gameObject;
     }
 }

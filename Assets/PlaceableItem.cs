@@ -11,10 +11,21 @@ public class PlaceableItem : MonoBehaviour
     public CardSO mySO;
     public GameObject[] neighbors;
     int i ;
+    public bool locked;
     //public Vector3[] directions;
     // Start is called before the first frame update
     void Start()
     {
+        
+        transform.GetChild(0).gameObject.SetActive(locked);
+        if(GetComponent<SpriteRenderer>() != null)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
+        if(Tilemapname == "")
+        {
+            Tilemapname = "Units";
+        }
         myTilemap = GameObject.Find(Tilemapname).GetComponent<Tilemap>();
         transform.position = myTilemap.layoutGrid.WorldToCell(transform.position) + new Vector3(0.5f, 0.5f, 0);
         myTilemap.SetTile(myTilemap.layoutGrid.WorldToCell(transform.position), myTile);

@@ -11,6 +11,8 @@ public class PlaceCard : MonoBehaviour
     public Vector3 originalposition;
     public Vector3[] directions;
     public GameObject[] storedneighbors;
+    public Vector3 arenaboundslow, arenaboundhigh;
+    public bool holding;
     PlaceableItem Getitematpos(Vector3 position)
     {
         foreach (PlaceableItem unit in GameObject.FindObjectsOfType<PlaceableItem>())
@@ -69,7 +71,11 @@ public class PlaceCard : MonoBehaviour
         mousePos.z = Camera.main.nearClipPlane;
         Vector3 MouseworldPosition = Camera.main.ScreenToWorldPoint(mousePos);
 
-        hologram.transform.position = tilemaptoplace.layoutGrid.CellToWorld(tilemaptoplace.layoutGrid.WorldToCell(MouseworldPosition)) + new Vector3(0.5f, 0.5f);
+        Vector3 hologramposraw = tilemaptoplace.layoutGrid.CellToWorld(tilemaptoplace.layoutGrid.WorldToCell(MouseworldPosition)) + new Vector3(0.5f, 0.5f);
+        Vector3 hologrampos = hologramposraw;
+        hologrampos.x = Mathf.Clamp(hologrampos.x+0.5f, arenaboundslow.x, arenaboundhigh.x)-0.5f;
+        hologrampos.y = Mathf.Clamp(hologrampos.y + 0.5f, arenaboundslow.y, arenaboundhigh.y)-0.5f;
+        hologram.transform.position = hologrampos;
         if (toplace == null)
         {
             hologram.GetComponent<SpriteRenderer>().sprite = null;
@@ -80,17 +86,17 @@ public class PlaceCard : MonoBehaviour
         }
 
 
-
+        holding = false;
         if (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Mouse0))
         {
-
+            holding = true;
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                originalposition = tilemaptoplace.layoutGrid.WorldToCell(MouseworldPosition) + new Vector3(0.5f, 0.5f);
+                originalposition = hologram.transform.position;
                 var unit = Getitematpos(originalposition);
                 if (unit != null)
                 {
-                    if (unit.mySO.ispickable)
+                    if (unit.mySO.ispickable && !unit.locked && !gameObject.GetComponent<Turnmanager>().turnRunning)
                     {                   
                     toplace = unit.mySO;
                     storedneighbors = unit.neighbors;
@@ -106,7 +112,7 @@ public class PlaceCard : MonoBehaviour
 
             if (toplace != null)
             {
-                if (tilemaptoplace.GetTile(tilemaptoplace.layoutGrid.WorldToCell(MouseworldPosition)) != null)
+                if (tilemaptoplace.GetTile(tilemaptoplace.layoutGrid.WorldToCell(hologram.transform.position)) != null)
                 {
                     canplace = false;
                 }
