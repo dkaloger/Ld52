@@ -6,6 +6,15 @@ using UnityEngine;
 public class CardSO : ScriptableObject
 {
     public GameObject Prefab;
- // public 
- //restrictions
+    public Sprite Sprite;
+    public bool ispickable;
+    public Restriction[] restrictions;
+    [System.Serializable]
+    public class Restriction
+    {
+       public Vector3Int direction;
+       public CardSO card;
+       public bool anydirection;
+
+    }
 }

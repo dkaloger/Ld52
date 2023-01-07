@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3517938493693316329
+--- !u!1 &2295836204986692323
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3517938493693316330}
-  - component: {fileID: 3517938493693316332}
-  - component: {fileID: 3517938493693316331}
-  - component: {fileID: 3517938493693316333}
-  - component: {fileID: 2001927229560352278}
+  - component: {fileID: 2295836204986692320}
+  - component: {fileID: 2295836204986692383}
+  - component: {fileID: 2295836204986692382}
+  - component: {fileID: 2295836204986692321}
+  - component: {fileID: 5207258845817683016}
   m_Layer: 0
-  m_Name: Shooter Unit
+  m_Name: Enemy entity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3517938493693316330
+--- !u!4 &2295836204986692320
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3517938493693316329}
+  m_GameObject: {fileID: 2295836204986692323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.75, y: -2.37, z: 0.07881537}
+  m_LocalPosition: {x: -2.88, y: 1.05, z: -0.06706764}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &3517938493693316332
+--- !u!114 &2295836204986692383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2295836204986692323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c6c321229a558478016c6c0f356708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHp: 1
+  CurrentHP: 0
+--- !u!60 &2295836204986692382
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3517938493693316329}
+  m_GameObject: {fileID: 2295836204986692323}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -65,43 +79,30 @@ PolygonCollider2D:
       - {x: -0.5877852, y: -0.80901706}
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
---- !u!114 &3517938493693316331
+--- !u!114 &2295836204986692321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3517938493693316329}
+  m_GameObject: {fileID: 2295836204986692323}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 525b74ddc8bdb1a43a78845d76673bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTile: {fileID: 11400000, guid: eaacb5b8d56f95b4d8270bf9a7eb35a3, type: 2}
+  myTile: {fileID: 11400000, guid: cf80deb24f89d33468c474346635f3e0, type: 2}
   Tilemapname: Units
   myTilemap: {fileID: 0}
-  mySO: {fileID: 11400000, guid: 9166ad8408ae11844b202fef4adc6941, type: 2}
+  mySO: {fileID: 11400000, guid: 9010c424f1b641c40a1d0540d98b36ac, type: 2}
   neighbors: []
---- !u!114 &3517938493693316333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3517938493693316329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 002fd087eafa96b429267d2e1cc34f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ProjectilePrefab: {fileID: 4573865814712148462, guid: 25b5bb6e8eb62534a97cd9a67b8632ef, type: 3}
---- !u!61 &2001927229560352278
+--- !u!61 &5207258845817683016
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3517938493693316329}
+  m_GameObject: {fileID: 2295836204986692323}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}

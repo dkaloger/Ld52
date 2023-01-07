@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21277e735da983249acc75c771c5dc82, type: 3}
-  m_Name: Shooter
+  m_Name: Wall
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3517938493693316329, guid: 2afdda4ca76cf6d4fa2f076d70985d26, type: 3}
-  Sprite: {fileID: 21300000, guid: dfcfbb1223ffb8b44b4bfcfedbf96acf, type: 3}
-  ispickable: 1
+  Prefab: {fileID: 4761958943945564461, guid: ebc17b20a444798459c24ce3e611d37c, type: 3}
+  Sprite: {fileID: 21300000, guid: 21b22e831b089564fa3358016dd42c15, type: 3}
+  ispickable: 0
   restrictions: []

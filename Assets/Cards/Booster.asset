@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21277e735da983249acc75c771c5dc82, type: 3}
-  m_Name: Shooter
+  m_Name: Booster
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3517938493693316329, guid: 2afdda4ca76cf6d4fa2f076d70985d26, type: 3}
-  Sprite: {fileID: 21300000, guid: dfcfbb1223ffb8b44b4bfcfedbf96acf, type: 3}
+  Prefab: {fileID: 2671519103861382211, guid: e4f3ac5d6974c454fa94e3d6894c446e, type: 3}
+  Sprite: {fileID: 21300000, guid: cf7132e1846c9724088c3fd94e5bedbd, type: 3}
   ispickable: 1
-  restrictions: []
+  restrictions:
+  - direction: {x: 0, y: 0, z: 0}
+    card: {fileID: 11400000, guid: 9166ad8408ae11844b202fef4adc6941, type: 2}
+    anydirection: 1
