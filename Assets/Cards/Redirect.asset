@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21277e735da983249acc75c771c5dc82, type: 3}
   m_Name: Redirect
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 0}
-  Sprite: {fileID: 0}
-  ispickable: 0
+  Prefab: {fileID: 6316715246408323319, guid: fa0f0f8615f3c8142aa05ee64f6891d6, type: 3}
+  Sprite: {fileID: 21300000, guid: 9e9c989abfd5efd44aa816d8b3282ce4, type: 3}
+  ispickable: 1
   restrictions: []

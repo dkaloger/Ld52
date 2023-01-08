@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7546103414812757902}
   - component: {fileID: 4550519751919108391}
   - component: {fileID: 3000955294817824386}
+  - component: {fileID: 4398076518386635604}
   m_Layer: 0
   m_Name: Enemy entity (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,9 +73,10 @@ MonoBehaviour:
   myTile: {fileID: 11400000, guid: 1bebc9b7efcf46846b9e781e57d86afa, type: 2}
   Tilemapname: Units
   myTilemap: {fileID: 0}
-  mySO: {fileID: 11400000, guid: 9010c424f1b641c40a1d0540d98b36ac, type: 2}
+  mySO: {fileID: 11400000, guid: dc491e8e30bcb1749a12f884c851761b, type: 2}
   neighbors: []
   locked: 0
+  dontplacetile: 0
 --- !u!61 &4550519751919108391
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,6 +155,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &4398076518386635604
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7546103414812757900}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 08c97b2c39a7b39429cf0513c6e2779b, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 08c97b2c39a7b39429cf0513c6e2779b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8490253595191307847
 GameObject:
   m_ObjectHideFlags: 0

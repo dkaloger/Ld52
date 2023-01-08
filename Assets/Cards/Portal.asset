@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 704120163776711945, guid: 7fadabf27601946438874fd38f82ff89, type: 3}
   Sprite: {fileID: 21300000, guid: be70e30cc121eff4583a5aaf6b239971, type: 3}
-  ispickable: 0
+  ispickable: 1
   restrictions: []

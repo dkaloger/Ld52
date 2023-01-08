@@ -12,15 +12,20 @@ public class PlaceableItem : MonoBehaviour
     public GameObject[] neighbors;
     int i ;
     public bool locked;
+    public bool dontplacetile;
+    public bool showlock;
     //public Vector3[] directions;
     // Start is called before the first frame update
     void Start()
     {
-        
-        transform.GetChild(0).gameObject.SetActive(locked);
+        if (showlock)
+        {
+            transform.GetChild(0).gameObject.SetActive(locked);
+        }
+
         if(GetComponent<SpriteRenderer>() != null)
         {
-            GetComponent<SpriteRenderer>().enabled = false;
+          //  GetComponent<SpriteRenderer>().enabled = false;
         }
         if(Tilemapname == "")
         {
@@ -28,8 +33,12 @@ public class PlaceableItem : MonoBehaviour
         }
         myTilemap = GameObject.Find(Tilemapname).GetComponent<Tilemap>();
         transform.position = myTilemap.layoutGrid.WorldToCell(transform.position) + new Vector3(0.5f, 0.5f, 0);
-        myTilemap.SetTile(myTilemap.layoutGrid.WorldToCell(transform.position), myTile);
-        neighbors = Getneighbors(transform.position);
+        if (!dontplacetile)
+        {
+           // myTilemap.SetTile(myTilemap.layoutGrid.WorldToCell(transform.position), myTile);
+            neighbors = Getneighbors(transform.position);
+        }
+ 
     }
 
     GameObject[] Getneighbors(Vector3 Pos)

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21277e735da983249acc75c771c5dc82, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 0}
-  Sprite: {fileID: 0}
-  ispickable: 0
+  Prefab: {fileID: 2295836204986692323, guid: 734e20c5e947a1d4fbab931acc3eb834, type: 3}
+  Sprite: {fileID: 21300000, guid: 1c9ee2538c963e548b64cdeaec277001, type: 3}
+  ispickable: 1
   restrictions: []

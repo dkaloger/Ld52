@@ -8,7 +8,7 @@ public class Portal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,7 +16,8 @@ public class Portal : MonoBehaviour
         {
            
                 collision.gameObject.GetComponent<Projectile>().latestportal = gameObject.GetComponent<Portal>();
-                collision.gameObject.transform.position = Pair.transform.position;                       
+                collision.gameObject.transform.position = Pair.transform.position;
+            collision.gameObject.GetComponent<Projectile>().movedirection = collision.gameObject.GetComponent<Projectile>().movedirection * -1;
         }
       
         
@@ -31,6 +32,14 @@ public class Portal : MonoBehaviour
 
     void Update()
     {
-        
+       
+        foreach (Portal item in FindObjectsOfType<Portal>())
+        {
+            if(item != gameObject.GetComponent<Portal>() && item.tag == gameObject.tag)
+            {
+                Pair = item;
+                break;
+            }
+        }
     }
 }

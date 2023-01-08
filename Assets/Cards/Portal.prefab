@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1356813544057615976}
   - component: {fileID: 3656429515825786527}
   - component: {fileID: 2757828651021846787}
+  - component: {fileID: 2026993323889116480}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -54,6 +55,7 @@ MonoBehaviour:
   mySO: {fileID: 11400000, guid: 0ebc8fad07da102498bb4cd31095c5a8, type: 2}
   neighbors: []
   locked: 0
+  dontplacetile: 0
 --- !u!114 &1356813544057615976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +147,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!111 &2026993323889116480
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704120163776711945}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 08c97b2c39a7b39429cf0513c6e2779b, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 08c97b2c39a7b39429cf0513c6e2779b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8338108807198294352
 GameObject:
   m_ObjectHideFlags: 0

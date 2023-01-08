@@ -15,11 +15,13 @@ public class Health : MonoBehaviour
     }
     void DoDamage(int damage)
     {
-        CurrentHP -= damage;
-        if(CurrentHP == 0)
+        CurrentHP -= 1;
+        print(gameObject.name);
+        if (CurrentHP == 0)
         {
+            //print("here22");
             //also destroy tile
-            if(gameObject.GetComponent<PlaceableItem>() != null)
+            if (gameObject.GetComponent<PlaceableItem>() != null)
             {
                 gameObject.GetComponent<PlaceableItem>().Remove();
             }
@@ -39,13 +41,15 @@ public class Health : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       // print();
-       Vector3 direction = -1 *(transform.position - collision.transform.position);
+       
+        Vector3 direction = -1 *(transform.position - collision.transform.position);
         direction = Vector3.Normalize(direction);
-        if (collision.gameObject.GetComponent<Projectile>() != null   && vulnerablepoints.Length == 0)
+        if (collision.gameObject.GetComponent<Projectile>() != null   &&!VulnerablePoints)
         {
-            if(collision.gameObject.GetComponent<Projectile>().dontkill != gameObject)
+            
+            if (collision.gameObject.GetComponent<Projectile>().dontkill != gameObject)
             {
+                
                 DoDamage(collision.gameObject.GetComponent<Projectile>().HitDamage);
             }
         }
@@ -62,6 +66,7 @@ public class Health : MonoBehaviour
                 }
             }
         }
+
         if (collision.gameObject.GetComponent<Projectile>().dontkill != gameObject)
         {
             Destroy(collision.gameObject);

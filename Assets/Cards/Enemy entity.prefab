@@ -94,13 +94,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2295836204986692320}
   - component: {fileID: 2295836204986692383}
-  - component: {fileID: 2295836204986692382}
   - component: {fileID: 2295836204986692321}
   - component: {fileID: 5207258845817683016}
   - component: {fileID: 6827702495368778733}
+  - component: {fileID: -8010083870933947322}
   m_Layer: 0
   m_Name: Enemy entity
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,36 +138,6 @@ MonoBehaviour:
   vulnerablepoints: []
   VulnerablePoints: 0
   releasechildrenOnDeath: 0
---- !u!60 &2295836204986692382
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2295836204986692323}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
 --- !u!114 &2295836204986692321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +156,7 @@ MonoBehaviour:
   mySO: {fileID: 11400000, guid: 9010c424f1b641c40a1d0540d98b36ac, type: 2}
   neighbors: []
   locked: 0
+  dontplacetile: 0
 --- !u!61 &5207258845817683016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -264,3 +235,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &-8010083870933947322
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2295836204986692323}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 08c97b2c39a7b39429cf0513c6e2779b, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 08c97b2c39a7b39429cf0513c6e2779b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
